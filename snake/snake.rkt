@@ -1,6 +1,8 @@
 #lang racket
 
-(require 2htdp/image 2htdp/universe)
+(require "graphics.rkt"
+         2htdp/image
+         2htdp/universe)
 
 ;;;;;;;;;;
 ;; Data ;;
@@ -44,11 +46,8 @@
 
 ;; Visual Constants
 (define MT-SCENE (empty-scene WIDTH-PX HEIGHT-PX))
-(define GOO-IMG  (bitmap "graphics/goo.gif"))
-(define SEG-IMG  (bitmap "graphics/body.gif"))
-(define HEAD-IMG (bitmap "graphics/head.gif"))
 
-(define HEAD-LEFT-IMG  HEAD-IMG)
+(define HEAD-LEFT-IMG  HEAD-IMAGE)
 (define HEAD-DOWN-IMG  (rotate 90 HEAD-LEFT-IMG))
 (define HEAD-RIGHT-IMG (flip-horizontal HEAD-LEFT-IMG))
 (define HEAD-UP-IMG    (flip-vertical HEAD-DOWN-IMG))
@@ -182,7 +181,7 @@
 
 (define (snake+scene snake scene)
   (define snake-body-scene
-    (img-list+scene (snake-body snake) SEG-IMG scene))
+    (img-list+scene (snake-body snake) BODY-IMAGE scene))
   (define dir (snake-dir snake))
   (img+scene (snake-head snake)
              (cond [(string=? "up" dir)    HEAD-UP-IMG]
@@ -203,7 +202,7 @@
 (define (goo-list+scene goos scene)
   (define (get-posns-from-goo goos)
     (map goo-loc goos))
-  (img-list+scene (get-posns-from-goo goos) GOO-IMG scene))
+  (img-list+scene (get-posns-from-goo goos) GOO-IMAGE scene))
 
 ;;;;;;;;;;;;;;
 ;; End Game ;;

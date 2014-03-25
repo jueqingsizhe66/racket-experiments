@@ -1,6 +1,8 @@
 #lang racket
 
-(require 2htdp/universe 2htdp/image)
+(require "graphics.rkt"
+         2htdp/universe
+         2htdp/image)
 
 ;;;;;;;;;;
 ;; Main ;;
@@ -25,7 +27,6 @@
 
 (define WIDTH 200)
 (define HEIGHT 300)
-(define IMAGE-of-UFO (bitmap "ufo.png"))
 (define HALF-of_UFO (/ (image-width IMAGE-of-UFO) 2))
 (define LEFT-EDGE-X   (- 0 HALF-of_UFO))
 (define RIGHT-EDGE-X  (+ WIDTH HALF-of_UFO))
@@ -95,25 +96,3 @@
 ;;;;;;;;;;;;;
 
 (start START-X START-Y START-DIRECTION)
-
-;;;;;;;;;;;
-;; Tests ;;
-;;;;;;;;;;;
-
-; (module+ test
-;   (require rackunit)
-;
-;   (check-equal? (modify-state (position LEFT-EDGE-X))
-;                 (position -13))
-;   (check-equal? (modify-state (position 0))
-;                 (position 3))
-;   (check-equal? (modify-state (position RIGHT-EDGE-X))
-;                 (position LEFT-EDGE-X))
-;   (check-equal? (modify-state (position (add1 RIGHT-EDGE-X)))
-;                 (position LEFT-EDGE-X))
-;   (check-equal? (render (position 50))
-;                 (place-image IMAGE-of-UFO
-;                              50
-;                              (/ HEIGHT 2)
-;                              (empty-scene WIDTH HEIGHT)))
-;   )
