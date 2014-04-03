@@ -34,14 +34,14 @@
       (rotate-until owned-by next-list rotate)))
 
 ;; Board -> Board
-;; rotate a list to the left
-(define (left l)
+;; rotate a list to the right
+(define (right l)
   (append (rest l) (list (first l))))
 
 ;; Board -> Board
-;; rotate a list to the right
-(define (right l)
-  (reverse (left (reverse l))))
+;; rotate a list to the left
+(define (left l)
+  (reverse (right (reverse l))))
 
 ;; Handling Moves
 

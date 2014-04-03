@@ -17,7 +17,8 @@
             (on-key interact-with-board)
             (to-draw draw-dice-world)
             (stop-when no-more-moves-in-world?
-                       draw-end-of-dice-world)))
+                       draw-end-of-dice-world))
+  (sleep 2))
 
 ;;  -> DiceWorld
 ;; Returns a randomly generated world. If the world that

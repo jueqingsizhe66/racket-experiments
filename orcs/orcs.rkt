@@ -162,7 +162,8 @@
   (big-bang (initialize-orc-world)
             (on-key player-acts-on-monsters)
             (to-draw render-orc-battle)
-            (stop-when end-of-orc-battle? render-the-end)))
+            (stop-when end-of-orc-battle? render-the-end))
+  (sleep 2))
 
 ;; -> OrcWorld
 ;; creates an orc-world ready for battling orcs

@@ -8,7 +8,7 @@
 ;; initalization constants
 (define PLAYER# 2)
 (define DICE# 3)
-(define BOARD 5)
+(define BOARD 4)
 (define GRID (* BOARD BOARD))
 (define INIT-PLAYER 0)
 (define INIT-SPARE-DICE 10)

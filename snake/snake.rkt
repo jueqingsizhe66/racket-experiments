@@ -70,7 +70,8 @@
             (on-tick next-pit TICK-RATE)
             (on-key direct-snake)
             (to-draw render-pit)
-            (stop-when dead? render-end)))
+            (stop-when dead? render-end))
+  (sleep 2))
 
 ;;;;;;;;;;;;;;;;;
 ;; Clock Ticks ;;

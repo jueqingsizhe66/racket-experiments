@@ -12,7 +12,8 @@
   (big-bang (position x y direction)
             (on-tick modify-state)
             (on-key handle-key)
-            (to-draw render)))
+            (to-draw render))
+  (void))
 
 ;;;;;;;;;;;
 ;; State ;;
