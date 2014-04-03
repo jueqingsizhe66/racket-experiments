@@ -14,6 +14,7 @@
 ;; Start the game
 (define (roll-the-dice)
   (big-bang (create-world-of-dice-and-doom)
+            (name GAME-TITLE)
             (on-key interact-with-board)
             (to-draw draw-dice-world)
             (stop-when no-more-moves-in-world?

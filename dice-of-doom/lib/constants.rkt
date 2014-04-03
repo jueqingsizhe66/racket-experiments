@@ -5,6 +5,8 @@
 
 (provide (all-defined-out))
 
+(define GAME-TITLE "Dice of Doom")
+
 ;; initalization constants
 (define PLAYER# 2)
 (define DICE# 3)

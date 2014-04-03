@@ -74,6 +74,8 @@
 ;; Constants ;;
 ;;;;;;;;;;;;;;;
 
+(define GAME-TITLE "Battle Orcs")
+
 ;; player attributes
 (define MAX-HEALTH 35)
 (define MAX-AGILITY 35)
@@ -160,6 +162,7 @@
 ;; Start the game
 (define (start-game)
   (big-bang (initialize-orc-world)
+            (name GAME-TITLE)
             (on-key player-acts-on-monsters)
             (to-draw render-orc-battle)
             (stop-when end-of-orc-battle? render-the-end))

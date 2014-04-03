@@ -27,6 +27,8 @@
 ;; Constants ;;
 ;;;;;;;;;;;;;;;
 
+(define GAME-TITLE "Snake")
+
 ;; Tick Rate
 (define TICK-RATE 1/10)
 
@@ -67,6 +69,7 @@
                        (fresh-goo)
                        (fresh-goo)
                        (fresh-goo)))
+            (name GAME-TITLE)
             (on-tick next-pit TICK-RATE)
             (on-key direct-snake)
             (to-draw render-pit)

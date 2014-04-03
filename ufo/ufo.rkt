@@ -4,28 +4,11 @@
          2htdp/universe
          2htdp/image)
 
-;;;;;;;;;;
-;; Main ;;
-;;;;;;;;;;
-
-(define (start x y direction)
-  (big-bang (position x y direction)
-            (on-tick modify-state)
-            (on-key handle-key)
-            (to-draw render))
-  (void))
-
-;;;;;;;;;;;
-;; State ;;
-;;;;;;;;;;;
-
-;; Keep track of lower and upper bounds
-(struct position (x y direction) #:transparent)
-
 ;;;;;;;;;;;;;;;
 ;; Constants ;;
 ;;;;;;;;;;;;;;;
 
+(define GAME-TITLE "UFO: Enemy Unknown :)")
 (define WIDTH 200)
 (define HEIGHT 300)
 (define HALF-of_UFO (/ (image-width IMAGE-of-UFO) 2))
@@ -38,6 +21,25 @@
 (define START-X (/ WIDTH 2))
 (define START-Y (/ HEIGHT 2))
 (define START-DIRECTION 'down)
+
+;;;;;;;;;;
+;; Main ;;
+;;;;;;;;;;
+
+(define (start x y direction)
+  (big-bang (position x y direction)
+            (name GAME-TITLE)
+            (on-tick modify-state)
+            (on-key handle-key)
+            (to-draw render))
+  (void))
+
+;;;;;;;;;;;
+;; State ;;
+;;;;;;;;;;;
+
+;; Keep track of lower and upper bounds
+(struct position (x y direction) #:transparent)
 
 ;;;;;;;;;;;;;;
 ;; Handlers ;;
